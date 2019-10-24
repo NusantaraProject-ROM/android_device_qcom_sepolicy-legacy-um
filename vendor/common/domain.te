@@ -34,6 +34,7 @@ allowxperm domain domain:icmp_socket ioctl { unpriv_sock_ioctls unpriv_tty_ioctl
 
 # allow all context to read gpu model
 allow { domain - isolated_app } sysfs_kgsl_gpu_model:file r_file_perms;
+allow { domain - isolated_app } sysfs_kgsl:dir search;
 
 # For compliance testing test suite reads vendor_security_path_level
 # Which is the public readable property “ ro.vendor.build.security_patch
