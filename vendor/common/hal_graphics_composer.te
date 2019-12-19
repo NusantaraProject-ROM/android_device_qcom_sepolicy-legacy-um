@@ -79,7 +79,7 @@ allow hal_graphics_composer_default sensors:unix_stream_socket connectto;
 
 #Allow graphics sysfs access
 allow hal_graphics_composer sysfs_kgsl:{file lnk_file} r_file_perms;
-allow hal_graphics_composer sysfs_kgsl:dir r_dir_perms
+allow hal_graphics_composer sysfs_kgsl:dir r_dir_perms;
 
 # Allow qdcmss socket access
 unix_socket_connect(hal_graphics_composer_default, qdcmsocket, qdcm-ss)
