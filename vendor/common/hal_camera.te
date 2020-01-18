@@ -84,4 +84,7 @@ get_prop(hal_camera, adsprpc_prop)
 
 allow hal_camera_default mm-qcamerad:unix_dgram_socket sendto;
 
+#allow hal_camera to access sysfs files
+allow hal_camera_default sysfs:file r_file_perms;
+
 get_prop(hal_camera, mm_video_prop)
