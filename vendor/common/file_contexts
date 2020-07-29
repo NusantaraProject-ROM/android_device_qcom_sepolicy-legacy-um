@@ -243,7 +243,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@1\.0-service-qti-lazy  u:object_r:hal_bluetooth_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.display\.color@1\.0-service            u:object_r:hal_display_color_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@1\.0-service       u:object_r:hal_perf_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.0-service       u:object_r:hal_perf_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.[0-1]-service       u:object_r:hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/ssgqmigd            u:object_r:ssgqmigd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.iop@1\.0-service        u:object_r:hal_iop_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.iop@2\.0-service        u:object_r:hal_iop_default_exec:s0
@@ -322,7 +322,7 @@
 #
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0
 /sys/class/thermal(/.*)?                                            u:object_r:sysfs_thermal:s0
-/sys/class/sensors(/.*)?                                            u:object_r:sysfs_sensors:s0
+/sys/class/sensors(/.*)?                                            u:object_r:vendor_sysfs_sensors:s0
 /sys/class/uio(/.*)?                                                u:object_r:sysfs_uio:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,rmtfs_sharedmem/uio/uio[0-9]+/maps/map[0-9]+(/.*)?    u:object_r:sysfs_uio_file:s0
@@ -342,6 +342,7 @@
 /sys/kernel/irq_helper/irq_blacklist_on                             u:object_r:sysfs_irqbalance:s0
 /sys/devices/virtual/graphics/fb([0-3])+/idle_time                  u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/dynamic_fps                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/dynamic_bitclk             u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/product_description        u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/vendor_name                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/hdcp/tp                    u:object_r:sysfs_graphics:s0
@@ -362,6 +363,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/res_info                   u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/s3d_mode                   u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_panel_info          u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/supported_bitclk           u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_type                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_split               u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/show_blank_event           u:object_r:sysfs_graphics:s0
@@ -649,8 +651,8 @@
 /(vendor|system/vendor)/lib(64)?/librs_adreno_sha1\.so      u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libqti-perfd-client\.so    u:object_r:same_process_hal_file:s0
 # perf-hal client lib (included by libqti-perfd-client.so)
-/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.perf@1\.0\.so    u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib(64)?/vendor\.qti\.hardware\.perf@2\.0\.so    u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.qti\.hardware\.perf@1\.0\.so    u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/vendor\.qti\.hardware\.perf@2\.[0-1]\.so    u:object_r:same_process_hal_file:s0
 
 # libGLESv2_adreno depends on this
 /(vendor|system/vendor)/lib(64)?/libllvm-glnext\.so         u:object_r:same_process_hal_file:s0
