@@ -475,7 +475,6 @@
 /sys/bus/msm_subsys/devices/subsys2/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys3/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys4/restart_level                   u:object_r:sysfs_ssr_toggle:s0
-/sys/devices/soc0/.*                                                u:object_r:sysfs_socinfo:s0
 /sys/devices/soc/soc:qcom,ipa_fws@[a-f0-9]+/subsys0/name            u:object_r:sysfs_data:s0
 /sys/devices/soc/soc:hbtp/secure_touch                              u:object_r:hbtp_kernel_sysfs:s0
 /sys/devices/soc/soc:hbtp/secure_touch_enable                       u:object_r:hbtp_kernel_sysfs:s0
@@ -599,7 +598,7 @@
 /mnt/vendor/persist/qti_fp(/.*)?                                    u:object_r:persist_qti_fp_file:s0
 /mnt/vendor/persist/hlos_rfs(/.*)?                                  u:object_r:persist_rfs_shared_hlos_file:s0
 /mnt/vendor/persist/display(/.*)?                                   u:object_r:persist_display_file:s0
-/mnt/vendor/persist/rfs.*                                           u:object_r:persist_rfs_file:s0
+/mnt/vendor/persist/rfs(/.*)?                                       u:object_r:persist_rfs_file:s0
 /mnt/vendor/persist/speccfg(/.*)?                                   u:object_r:regionalization_file:s0
 /mnt/vendor/persist/misc(/.*)?                                      u:object_r:persist_misc_file:s0
 /mnt/vendor/persist/bms(/.*)?                                       u:object_r:persist_bms_file:s0
